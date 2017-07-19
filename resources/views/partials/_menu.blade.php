@@ -35,26 +35,15 @@
                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
                     <li class="nav-item"><a href="{{ route('register.create') }}" class="nav-link">Register</a></li>
                 @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" id="dMenuButton"
-                                data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            {{ auth()->user()->username }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="dMenuButton" role="menu">
-                            <li class="dropdown-item">
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ auth()->user()->username }}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('users.edit', auth()->user()->id) }}">Voir mon profil</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}">Me déconnecter</a>
+                        </div>
+                    </div>
                 @endif
             </ul>
     </div>

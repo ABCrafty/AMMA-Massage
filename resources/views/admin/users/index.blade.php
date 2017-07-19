@@ -37,7 +37,7 @@
                 ajax: '{!! route('datatables.data') !!}',
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'username', name: 'name'},
+                    {data: 'username', name: 'username'},
                     {data: 'email', name: 'email'}
                 ]
             });

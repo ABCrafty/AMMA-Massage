@@ -14,7 +14,6 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/node_modules/datatables.net-dt/css/jquery.dataTables.css">
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -62,15 +61,15 @@
                     </div>
                     <div class="col-10 col-md-9 col-lg-9 col-xl-10">
                         <div class="admin-header">
-                            <a href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ auth()->user()->username }}
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="{{ route('users.edit', auth()->user()->id) }}">Voir mon profil</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">Me déconnecter</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="admin-content">
                             @yield('content')
