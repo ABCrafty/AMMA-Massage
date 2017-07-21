@@ -24,11 +24,6 @@
     <div class="admin-container">
 
         <main role="main">
-
-            @php
-                $homepage = \App\Models\Homepage::first();
-                $user = \App\User::count();
-            @endphp
                 <div class="row no-gutters">
                     <div class="col-2 col-md-3 col-lg-3 col-xl-2 sidebar-admin">
                         <div class="admin-button">

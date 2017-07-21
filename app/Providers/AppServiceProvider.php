@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Homepage;
+use App\User;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        view()->composer('admin.layouts.app', function($view) {
+            $view->with('homepage', Homepage::first());
+            $view->with('user', User::count());
+        });
     }
 
     /**
