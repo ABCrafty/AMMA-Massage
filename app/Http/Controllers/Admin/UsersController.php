@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yajra\Datatables\Datatables;
@@ -60,24 +61,34 @@ class UsersController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function destroy($id) {
-        if(Auth::user()->id == $id) {
-            session()->flash('On ne peut pas supprimer l\'utilisateur courant');
-            return redirect()->back();
-        }
+    public function destroy($user) {
+//        if(auth()->user()->id == $id) {
+//            session()->flash('warning', 'On ne peut pas supprimer l\'utilisateur courant');
+//            return redirect()->back();
+//        }
 
-        if(User::findOrFail($id)->delete()) {
-            session()->flash('success', 'user supprimé');
-        }
-        else {
-            session()->flash('user pas supprimé');
-        }
+        $user = User::find($user);
+
+        $user->delete();
+
+        session()->flash('message', 'utilisateur supprimé');
 
         return redirect()->back();
     }
 
+    public function show() {
+
+    }
+
     public function ajaxListing() {
         $users = User::select(['id', 'username', 'email']);
-            return Datatables::of($users)->make(true);
+            return Datatables::of($users)
+                ->addColumn('action', function ($user) {
+                    return '<a class="data-action" href="'.route('users.edit', $user->id).'">
+                            <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+                            <a class="data-action" href="'.route('users.destroy', $user->id).'">
+                            <i class="fa fa-times fa-2x" aria-hidden="true"></i></a>';
+                })
+                ->make(true);
     }
 }

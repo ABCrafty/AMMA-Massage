@@ -38,7 +38,8 @@
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'username', name: 'username'},
-                    {data: 'email', name: 'email'}
+                    {data: 'email', name: 'email'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
                 ]
             });
         });

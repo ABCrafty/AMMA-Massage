@@ -30,6 +30,18 @@
         </div>
     @endif
 
+    @if($flash = session('warning'))
+        <div class="alert alert-warning alert-admin animated bounceInRight" role="alert">
+            <p>{{ $flash }}</p>
+        </div>
+    @endif
+
+    @if($flash = session('danger'))
+        <div class="alert alert-danger alert-admin animated bounceInRight" role="alert">
+            <p>{{ $flash }}</p>
+        </div>
+    @endif
+
     <div class="admin-container">
 
         <main role="main">

@@ -91,7 +91,9 @@ class RegisterController extends Controller
         $user = User::create([
             'username' => $input['username'],
             'email' => $input['email'],
-            'password' => $input['password']
+            'password' => $input['password'],
+            'description' => '',
+            'avatar' => ''
         ]);
 
         $user->attachRole($role);
