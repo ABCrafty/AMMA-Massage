@@ -37,6 +37,7 @@ class HomeController extends Controller
         $content = Homepage::create($input);
         $content->save();
 
+        session()->flash('message','Page d\'accueil créée');
         return redirect()->route('dashboard.index')->with('success', 'Contenu de la page d\'accueil créé');
     }
 
@@ -50,6 +51,8 @@ class HomeController extends Controller
                 $input[$key] ='';
 
         $homepage->update($input);
+
+        session()->flash('message','Page d\'accueil mise à jour');
 
         return redirect()->route('dashboard.index');
     }

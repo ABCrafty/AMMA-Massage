@@ -15,12 +15,21 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
+
+    @if($flash = session('message'))
+        <div class="alert alert-success alert-admin animated bounceInRight" role="alert">
+            <p>{{ $flash }}</p>
+        </div>
+    @endif
+
     <div class="admin-container">
 
         <main role="main">

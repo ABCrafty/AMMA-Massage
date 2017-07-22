@@ -1,0 +1,29 @@
+.alert-flash {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  opacity: 0.8;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+
+  p {
+    margin: 0;
+  }
+
+  .fa-times {
+    float: right;
+  }
+}
+
+.alert-admin {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  top: 10%;
+  height: 100px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+}

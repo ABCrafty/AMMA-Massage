@@ -56,6 +56,7 @@ class UsersController extends Controller
 
         $user->update($input);
 
+        session()->flash('message','Utilisateur mis à jour');
         return redirect()->route('users.index');
     }
 

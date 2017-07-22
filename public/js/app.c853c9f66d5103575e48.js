@@ -51029,6 +51029,23 @@ $(function () {
     $('.admin-content').height();
 });
 
+$(document).ready(function () {
+
+    $('.alert-flash').slideDown(function () {
+        setTimeout(function () {
+            $('.alert-flash').slideUp('fast');
+        }, 5000);
+    });
+
+    $('.alert-admin').removeClass('bounceInRight');
+
+    var animationOut = function animationOut() {
+        $('.alert-admin').addClass('bounceOutRight');
+    };
+
+    setTimeout(animationOut, 5000);
+});
+
 /***/ }),
 
 /***/ "./resources/assets/js/bootstrap.js":

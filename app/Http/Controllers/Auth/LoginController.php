@@ -47,6 +47,8 @@ class LoginController extends Controller
             return back();
         };
 
+        session()->flash('message', 'Okaeri senpai !');
+
         return redirect()->home();
     }
 
