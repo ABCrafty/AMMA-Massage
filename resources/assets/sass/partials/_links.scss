@@ -3,3 +3,21 @@
     color: $secondary-color!important;
   }
 }
+
+.data-action {
+  .fa-times {
+    color: red;
+
+    &:hover {
+      color: darken(red, 7%);
+    }
+  }
+
+  .fa-pencil-square-o {
+    color: $primary-color;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

@@ -17,6 +17,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
@@ -27,11 +29,6 @@
             <p>{{ $flash }}<span class="mr-auto"><i class="fa fa-times" aria-hidden="true"></i></span></p>
         </div>
     @endif
-
-
-
-
-
 
     <header>
         @include('partials._menu')

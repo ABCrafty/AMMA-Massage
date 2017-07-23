@@ -2,25 +2,20 @@
 
 @section('content')
     <div class="form-container">
-        <h1>Edit du contenu page d'accueil</h1>
+        @include('layouts.errors._errors')
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Tableau de bord</a></li>
+            <li class="breadcrumb-item">Edit page d'accueil</li>
+        </ol>
 
+        <h1>Edition du contenu page d'accueil</h1>
 
-
-        @if(!$contentExists)
-        {!! Form::open(['route' => ['homepage.store'], 'method' => 'post',
-            'enctype' => 'multipart/form-data', 'class' => ' form-bordered form-horizontal']) !!}
+        {!! Form::model($homepage, ['route' => ['homepage.update', $homepage->id], 'method' => 'patch',
+        'enctype' => 'multipart/form-data', 'class' => ' form-bordered']) !!}
 
             @include('admin.homepage._form')
 
         {!! Form::close() !!}
-        @else
 
-            {!! Form::model($homepage, ['route' => ['homepage.update', $homepage->id], 'method' => 'patch',
-            'enctype' => 'multipart/form-data', 'class' => ' form-bordered']) !!}
-
-                @include('admin.homepage._form')
-
-            {!! Form::close() !!}
-         @endif
     </div>
 @endsection

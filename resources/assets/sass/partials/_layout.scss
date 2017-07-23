@@ -50,7 +50,11 @@ html,body {
 }
 
 .tel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
+  width: 300px;
   top: 1rem;
   right: 0;
   border-radius: 7px 0 0 7px;
@@ -103,11 +107,8 @@ html,body {
   }
 }
 
-.admin-container {
-
-}
 .admin-header {
-  height: 5vh;
+  height: 7vh;
   text-align: right;
   background: #eee;
   display: flex;
@@ -117,7 +118,7 @@ html,body {
 }
 
 .admin-content {
-  padding: 1rem;
+  padding: 3rem;
 }
 
 
@@ -126,13 +127,13 @@ html,body {
   background: $primary-color;
   color: white;
   min-height: 100vh!important;
+  width: 4%;
 
   .admin-button {
     padding: 0.5rem;
     text-transform: uppercase;
     text-align: center;
-    height: 5vh;
-    background: $secondary-color;
+    height: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,9 +141,15 @@ html,body {
 
   li {
     padding: 0.5rem;
+    margin-left: 0.5rem;
     text-transform: uppercase;
     &:first-child {
       margin-top: 1rem;
+    }
+
+    .fa {
+      font-size: 2rem;
+      margin-right: 0.5rem;
     }
   }
 
@@ -159,11 +166,11 @@ html,body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #2b2b2b;
+  background: $secondary-color;
   padding: 1rem;
 
   .admin-pic {
-    width: 35%;
+    width: 100%;
 
     img {
       width:100%;
@@ -175,6 +182,7 @@ html,body {
   .admin-info {
     width: 65%;
     padding: 1rem;
+    display: none;
 
     p {
       text-transform: uppercase;
@@ -189,7 +197,58 @@ html,body {
         margin: 0 0.5rem;
       }
     }
+  }
+}
+
+.show-sidebar {
+  display: none;
+  transition: all 1s ease;
+}
+
+.breadcrumb {
+  background: white!important;
+}
+.breadcrumb-item {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:before {
+    content: '>'!important;
+  }
+  &:first-child {
+    &:before {
+      content: '' !important;
+    }
+  }
+}
+
+.admin-main-content {
+  width: 96%;
+}
+
+.admin-pic-dropdown {
+  width: 40px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.service {
+  margin: 1rem;
+
+  p {
+    padding: 1rem;
+  }
 
 
+  &:first-child {
+    margin-left: 2rem;
+  }
+
+  &:last-child {
+    margin-right: 1rem;
   }
 }

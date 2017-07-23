@@ -18,4 +18,16 @@
 .dropdown-custom-style {
   border-radius: 70px!important;
   border: 1px solid $primary-color!important;
+  cursor: pointer;
+  display: flex!important;
+  align-items: center;
+
+  .admin-pic {
+    width: 40px;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
 }

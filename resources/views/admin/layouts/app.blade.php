@@ -46,9 +46,9 @@
 
         <main role="main">
                 <div class="row no-gutters">
-                    <div class="col-2 col-md-3 col-lg-3 col-xl-2 sidebar-admin">
+                    <div class="sidebar-admin">
                         <div class="admin-button">
-                            <a href="{{ route('dashboard.index') }}">Admin Amma-Massage</a>
+                            <a href="{{ route('dashboard.index') }}">Admin <span class="show-sidebar">Amma-Massage</span></a>
                         </div>
                         <div class="sidebar-profile">
                             <div class="admin-pic">
@@ -63,22 +63,29 @@
                             </div>
 
                         </div>
-                        <ul class="list-unstyled">
-                            <li><a href="{{ route('dashboard.index') }}">Tableau de bord</a></li>
+                        <ul class="list-unstyled menu-admin">
+                            <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-tachometer" aria-hidden="true"></i>
+                                    <span class="show-sidebar">Tableau de bord</span></a></li>
                             @if($homepage)
-                            <li><a href="{{ route('homepage.edit', ['id' => $homepage->id]) }}">Page d'accueil</a></li>
+                                <li><a href="{{ route('homepage.edit', ['id' => $homepage->id]) }}"> <i class="fa fa-home" aria-hidden="true"></i><span class="show-sidebar">Page d'accueil</span></a></li>
                             @else
-                                <li><a href="{{ route('homepage.create') }}">Page d'accueil</a></li>
+                                <li><a href="{{ route('homepage.create') }}"><i class="fa fa-home" aria-hidden="true"></i> <span class="show-sidebar">Page d'accueil</span></a></li>
                             @endif
-                            <li><a href="{{ route('story-amma.index') }}">Histoire AMMA</a></li>
-                            <li><a href="{{ route('blog-admin.index') }}">Blog</a></li>
-                            <li><a href="{{ route('users.index') }}">Utilisateurs</a></li>
+                            <li><a href="{{ route('story-amma.index') }}"><i class="fa fa-book" aria-hidden="true"></i>
+                                    <span class="show-sidebar">Histoire AMMA</span></a></li>
+                            <li><a href="{{ route('blog-admin.index') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                    <span class="show-sidebar">Blog</span></a></li>
+                            <li><a href="{{ route('users.index') }}"><i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="show-sidebar">Utilisateurs</span></a></li>
                         </ul>
                     </div>
-                    <div class="col-10 col-md-9 col-lg-9 col-xl-10">
+                    <div class="admin-main-content">
                         <div class="admin-header">
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="admin-pic-dropdown">
+                                        <img src="http://www.kippondream.com/uploads/membres/3/kuro.jpg" alt="">
+                                    </div>
                                     {{ auth()->user()->username }}
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
@@ -87,9 +94,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="admin-content">
-                            @yield('content')
-                        </div>
+                            <div class="admin-content">
+                                @yield('content')
+                            </div>
                     </div>
                 </div>
 

@@ -1,12 +1,12 @@
 <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{ asset('/') }}" title="homepage">
         <img src="{{asset('image/logo.png')}}" title="logo" alt="logo" class="logo-img">
     </a>
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">

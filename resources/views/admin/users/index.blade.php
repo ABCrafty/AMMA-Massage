@@ -1,10 +1,14 @@
 @extends('admin.layouts.app')
 
 @section('content')
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Tableau de bord</a></li>
+        <li class="breadcrumb-item">Index Utilisateurs</li>
+    </ol>
     <h1>Index utilisateurs</h1>
 
 
-    <table class="table table-bordered dataTable" id="listingUsers">
+    <table class="table table-bordered table-striped dataTable" id="listingUsers">
         <thead>
             <th>ID</th>
             <th>Nom</th>

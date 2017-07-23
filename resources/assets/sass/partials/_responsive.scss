@@ -1,0 +1,41 @@
+@media screen and (max-width: 400px) {
+  .logo-img {
+    width: 50%!important;
+  }
+
+  .sidebar-admin {
+    width: 21%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .logo-img {
+    width: 30%!important;
+  }
+
+  .homepage-landing {
+    height: 47vh;
+  }
+
+  .massage-amma {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo-img {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1600px) {
+
+}
