@@ -1,16 +1,42 @@
 @media screen and (max-width: 400px) {
   .logo-img {
-    width: 50%!important;
+    width: 50%t;
   }
 
   .sidebar-admin {
     width: 21%;
+
+    .admin-button {
+      height: 13vh;
+    }
   }
+
+  .admin-main-content {
+    width: 79%;
+  }
+
+  .admin-header {
+    height: 13vh;
+  }
+
+
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (min-width: 401px) {
   .logo-img {
     width: 30%!important;
+  }
+
+  .sidebar-admin {
+    width: 16%;
+
+    .admin-button {
+      height: 13vh;
+    }
+  }
+
+  .admin-main-content {
+    width: 84%;
   }
 
   .homepage-landing {
@@ -20,22 +46,64 @@
   .massage-amma {
     margin-bottom: 3rem;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .logo-img {
-    width: 20%;
+  .admin-content {
+    padding: 0.5rem;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 551px) {
+  .logo-img {
+    width: 20%;
+  }
+
+  .sidebar-admin {
+    width: 10%;
+
+    .admin-button {
+      height: 7vh;
+    }
+  }
+
+  .admin-main-content {
+    width: 90%;
+  }
+
+  .admin-content {
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  .sidebar-admin {
+    width: 8%;
+  }
+
+  .admin-main-content {
+    width: 92%;
+  }
 
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 993px) {
+  .sidebar-admin {
+    width: 6%;
+  }
+
+  .admin-main-content {
+    width: 94%;
+  }
 
 }
+
 
 @media screen and (min-width: 1600px) {
+  .sidebar-admin {
+    width: 4%;
+  }
 
+  .admin-main-content {
+    width: 96%;
+  }
 }
