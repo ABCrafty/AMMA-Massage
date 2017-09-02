@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 //use Intervention\Image\Facades\Image;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\File;
 
 class Controller extends BaseController
 {
@@ -17,15 +18,26 @@ class Controller extends BaseController
     protected function upload(array $datas) {
         $file = $datas['file'];
         if(isset($datas['path']) && !file_exists($datas['path'])) {
-            mkdir($datas['path'], 755, true);
+            File::makeDirectory($datas['path'], $mode = 0777, true, true);
         }
         $file_name = $file->getClientOriginalName();
+
+
         if(isset($datas['context'])) {
             $file_path = $datas['path'] . $datas['context'] . '_' . $file_name;
         } else {
             $file_path = $datas['path'] . $file_name;
         }
-        Image::make($file)->save($file_path);
+
+        if($file->getClientOriginalExtension() === 'pdf') {
+//           dd($datas['path']);
+            $file->move(public_path('uploads/amma-story'), $file_name);
+        }
+        else {
+            Image::make($file)->save($file_path);
+        }
+
+
         return $file_path;
     }
 }

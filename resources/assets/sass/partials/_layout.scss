@@ -2,12 +2,21 @@ html,body {
   font-size: 14px;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  font-size: 1.5rem!important;
+}
+
+p {
+  margin: 0!important;
+}
+
 .homepage-landing {
-  height: 80vh;
+  height: 65vh;
 }
 
 .massage-amma {
   padding: 1rem;
+  text-align: center;
   letter-spacing: 2px;
   margin-bottom: 12rem;
 
@@ -22,7 +31,6 @@ html,body {
 
   a {
     margin: 0.5rem 0;
-    text-transform: uppercase;
   }
 }
 
@@ -53,11 +61,9 @@ html,body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  margin: 1rem;
   width: 300px;
-  top: 1rem;
-  right: 0;
-  border-radius: 7px 0 0 7px;
+  border-radius: 7px;
   padding: 1.5rem;
   color: white;
   font-size: 1.5rem;
@@ -76,7 +82,7 @@ html,body {
   > p {
     text-align: center;
     text-transform: uppercase;
-    padding: 3rem;
+    padding: 1.5rem;
     background: #eee;
   }
 }
@@ -202,7 +208,6 @@ html,body {
 
 .show-sidebar {
   display: none;
-  transition: all 1s ease;
 }
 
 .breadcrumb {
@@ -251,4 +256,24 @@ html,body {
   &:last-child {
     margin-right: 1rem;
   }
+}
+
+// histoire amma
+
+.history-container {
+  padding: 1rem;
+  text-align: justify;
+}
+
+.history-img {
+  img {
+    width: 100%;
+  }
+}
+
+.story-line {
+  background: $primary-color;
+  width: 90%;
+  margin: 1rem auto;
+  font-size: 10px;
 }

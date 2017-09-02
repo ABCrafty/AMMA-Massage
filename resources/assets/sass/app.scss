@@ -12,9 +12,13 @@
 @import "partials/_form";
 @import "partials/_dataTables";
 @import "partials/_alerts";
+@import "partials/_admin";
 @import "partials/_responsive";
 
 // bootstrap 4
-@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+
+// animate css
+@import "~animate.css/animate.min.css";
 
 

@@ -15,6 +15,12 @@ class CreateAmmaStoriesTable extends Migration
     {
         Schema::create('amma_stories', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('intro');
+            $table->text('content');
+            $table->text('conclusion');
+            $table->string('image');
+            $table->string('pdf');
+            $table->text('video_link');
             $table->timestamps();
         });
     }

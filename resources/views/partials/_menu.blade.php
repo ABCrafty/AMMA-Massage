@@ -1,16 +1,17 @@
-<nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-faded">
     <a class="navbar-brand" href="{{ asset('/') }}" title="homepage">
         <img src="{{asset('image/logo.png')}}" title="logo" alt="logo" class="logo-img">
     </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
 
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Histoire du AMMA</a>
+                <a class="nav-link" href="{{ route('front-amma-story.index') }}">Histoire du AMMA</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Entreprises</a>
@@ -27,14 +28,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
+
+            @role('admin')
+                <li class="nav-item">
+                    <a href="{{ route('dashboard.index') }}" class="nav-link">Accéder à la zone admin</a>
+                </li>
+            @endrole
         </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
-                @if (Auth::guest())
-                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
-                    <li class="nav-item"><a href="{{ route('register.create') }}" class="nav-link">Register</a></li>
-                @else
+                @if (!auth()->guest())
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ auth()->user()->username }}

@@ -1,67 +1,64 @@
-@media screen and (max-width: 400px) {
-  .logo-img {
-    width: 50%t;
+@media screen and (min-width: 550px) {
+  .homepage-landing {
+    min-height: 330px;
+    justify-content: center;
   }
 
+  // admin
   .sidebar-admin {
-    width: 21%;
+    width: 12%;
+
+    &:hover {
+      width: 40%;
+    }
 
     .admin-button {
-      height: 13vh;
+      height: 8vh;
     }
-  }
-
-  .admin-main-content {
-    width: 79%;
   }
 
   .admin-header {
-    height: 13vh;
-  }
-
-
-}
-
-@media screen and (min-width: 401px) {
-  .logo-img {
-    width: 30%!important;
-  }
-
-  .sidebar-admin {
-    width: 16%;
-
-    .admin-button {
-      height: 13vh;
-    }
+    height: 8vh;
   }
 
   .admin-main-content {
-    width: 84%;
-  }
-
-  .homepage-landing {
-    height: 47vh;
-  }
-
-  .massage-amma {
-    margin-bottom: 3rem;
-  }
-
-  .admin-content {
-    padding: 0.5rem;
+    width: 88%;
   }
 }
 
-@media screen and (min-width: 551px) {
-  .logo-img {
-    width: 20%;
+@media screen and (min-width: 768px) {
+
+  .nav-link {
+    font-size: 1.5rem;
   }
+  .homepage-landing {
+    height: 50vh;
+    justify-content: flex-start;
+  }
+  .logo-img {
+    width: 83%;
+  }
+
+  .tel {
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    border-radius: 7px 0 0 7px;
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  .massage-amma {
+    font-size: 1.5rem;
+  }
+
+  // admin
 
   .sidebar-admin {
     width: 10%;
 
-    .admin-button {
-      height: 7vh;
+    &:hover {
+      width: 35%;
     }
   }
 
@@ -70,37 +67,67 @@
   }
 
   .admin-content {
-    padding: 1rem;
+    padding: 3rem;
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1000px) {
+  .homepage-landing {
+    height: 73vh;
+  }
+
+  .logo-img {
+    width: 70%;
+  }
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  // admin
 
   .sidebar-admin {
-    width: 8%;
+    width: 7%;
+
+    &:hover {
+      width: 25%;
+    }
   }
 
   .admin-main-content {
-    width: 92%;
+    width: 93%;
   }
 
+  .form-text {
+    text-align: center;
+  }
 }
 
-@media screen and (min-width: 993px) {
+/*===========
+MEDIUM SCREENS
+===========*/
+
+@media screen and (min-width: 1200px) {
   .sidebar-admin {
-    width: 6%;
+    width: 5%;
+
+    &:hover {
+      width: 20%;
+    }
   }
 
   .admin-main-content {
-    width: 94%;
+    width: 95%;
   }
-
 }
-
 
 @media screen and (min-width: 1600px) {
+  // admin
   .sidebar-admin {
     width: 4%;
+
+    &:hover {
+      width: 15%;
+    }
   }
 
   .admin-main-content {

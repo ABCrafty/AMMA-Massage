@@ -13,7 +13,7 @@ class AmmaStoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class AmmaStoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'intro' => 'required',
+            'content' =>  'required',
+            'image' =>  'required',
+            'pdf' =>  'required',
+            'video-link' =>  'required',
         ];
     }
 }

@@ -11,17 +11,15 @@
 |
 */
 
-Route::resource('blog', 'PostsController');
-
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('blog', 'PostsController@index')->name('front-blog.index');
+
+Route::get('histoire-amma', 'AmmastoryController@index')->name('front-amma-story.index');
+
 // Authentification
-Route::get('/register', 'Auth\RegisterController@create')->name('register.create');
 Route::get('/login', 'Auth\LoginController@create')->name('login');
 Route::get('/logout', 'Auth\LoginController@destroy')->name('logout');
-Route::get('/password-request', 'Auth\LoginController@lostPassword')->name('password.request');
-
-Route::post('/register', 'Auth\RegisterController@store')->name('register.store');
 Route::post('/login', 'Auth\LoginController@store')->name('login.store');
 
 // zone admin
@@ -35,15 +33,19 @@ Route::group(['prefix' => 'admin',  'middleware' => ['role:admin']], function()
     // users, profile
     Route::resource('users', 'Admin\UsersController');
 
+    // amma-story
+    Route::resource('amma-story', 'Admin\AmmastoryController');
+
     // roles
     Route::resource('roles', 'RolesController');
-
     Route::resource('permissions', 'PermissionsController');
 
-    Route::any('user-data', 'Admin\UsersController@ajaxListing')->name('datatables.data');
+    // blog
+    Route::get('blog/{blog}/delete', 'Admin\PostsController@destroy')->name('blog.destroy');
+    Route::resource('blog', 'Admin\PostsController', ['except' => 'destroy']);
+    Route::any('blog-data', 'Admin\PostsController@ajaxListing')->name('datatables.blogData');
 
-    Route::get('admin/story-amma', 'Admin\AmmastoryController@index')->name('story-amma.index');
-    Route::get('admin/blog-admin', 'Admin\PostsController@index')->name('blog-admin.index');
+    Route::any('user-data', 'Admin\UsersController@ajaxListing')->name('datatables.data');
 });
 
 

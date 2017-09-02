@@ -26,19 +26,19 @@
 
     <div class="container-fluid">
         <div class="row justify-content-around infos" style="$color">
-            <div class="col-12 col-sm-6 info">
+            <div class="col-12 col-sm-6 col-lg-3 info">
                 <i class="fa fa-calendar text-center" aria-hidden="true"></i>
                 <p class="text-center">{{ $homepage->service_1 }}</p>
             </div>
-            <div class="col-12 col-sm-6 info">
+            <div class="col-12 col-sm-6 col-lg-3 info">
                 <i class="fa fa-map-marker text-center" aria-hidden="true"></i>
                 <p class="text-center">{{ $homepage->service_2 }}</p>
             </div>
-            <div class="col-12 col-sm-6 info">
+            <div class="col-12 col-sm-6 col-lg-3 info">
                 <i class="fa fa-graduation-cap text-center" aria-hidden="true"></i>
                 <p class="text-center">{{ $homepage->service_3 }}</p>
             </div>
-            <div class="col-12 col-sm-6 info">
+            <div class="col-12 col-sm-6 col-lg-3 info">
                 <i class="fa fa-star text-center" aria-hidden="true"></i>
                 <p class="text-center">{{ $homepage->service_4 }}</p>
             </div>
@@ -49,7 +49,7 @@
         <p>{{ $homepage->offer_preview }}</p>
 
         <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="service animated">
                     <i class="fa fa-linode" aria-hidden="true"></i>
                     <h6>{{ $homepage->offer_title_2 }}</h6>
@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="service animated">
                     <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
                     <h6>{{ $homepage->offer_title_2 }}</h6>
@@ -69,7 +69,7 @@
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="service animated">
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     <h6>{{ $homepage->offer_title_3 }}</h6>

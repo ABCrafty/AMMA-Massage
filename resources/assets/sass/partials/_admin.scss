@@ -1,0 +1,73 @@
+.admin-main-content {
+  width: 78%;
+}
+
+.admin-actions {
+  display: flex;
+}
+
+.admin-pic-dropdown {
+  width: 40px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.sidebar-admin:hover .admin-pic {
+  width: 25%;
+}
+
+.admin-header {
+  height: 13vh;
+  text-align: right;
+  background: #eee;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+}
+
+.admin-content {
+  padding: 1rem 0.3rem;
+
+  h1 {
+    margin: 2rem 0!important;
+  }
+}
+
+.stats-contain {
+  padding: 1rem;
+}
+
+.stats {
+  background: $secondary-color;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.stats-numbers {
+  background: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.time-stats-container {
+  padding: 1rem;
+}
+.time-stats {
+  background: $secondary-color;
+  padding: 1rem;
+  color: white;
+  font-size: 1.2rem;
+}

@@ -52,9 +52,13 @@
                         </div>
                         <div class="sidebar-profile">
                             <div class="admin-pic">
-                                <img src="http://www.kippondream.com/uploads/membres/3/kuro.jpg" alt="">
+                                @if(auth()->user()->avatar)
+                                    <img src="/{{ auth()->user()->avatar }}" alt="">
+                                @else
+                                    <img src="{{ url('image/gravatar.png') }}" alt="">
+                                @endif
                             </div>
-                            <div class="admin-info">
+                            <div class="admin-info show-sidebar">
                                 <p>Bonjour {{ auth()->user()->username }}</p>
                                 <div class="admin-actions">
                                     <a href="{{ route('users.edit', auth()->user()->id) }}"><i class="fa fa-id-card" aria-hidden="true"></i></a>
@@ -64,19 +68,56 @@
 
                         </div>
                         <ul class="list-unstyled menu-admin">
-                            <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-tachometer" aria-hidden="true"></i>
-                                    <span class="show-sidebar">Tableau de bord</span></a></li>
+
+                            <li>
+                                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                <span class="show-sidebar">
+                                    <a href="{{ route('dashboard.index') }}">Tableau de bord</a>
+                                </span>
+                            </li>
                             @if($homepage)
-                                <li><a href="{{ route('homepage.edit', ['id' => $homepage->id]) }}"> <i class="fa fa-home" aria-hidden="true"></i><span class="show-sidebar">Page d'accueil</span></a></li>
+                                <li>
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span class="show-sidebar">
+                                        <a href="{{ route('homepage.edit', ['id' => $homepage->id]) }}">Page d'accueil</a>
+                                    </span>
+                                </li>
                             @else
-                                <li><a href="{{ route('homepage.create') }}"><i class="fa fa-home" aria-hidden="true"></i> <span class="show-sidebar">Page d'accueil</span></a></li>
+                                <li>
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                    <span class="show-sidebar">
+                                        <a href="{{ route('homepage.create') }}">Page d'accueil</a>
+                                    </span>
+                                </li>
                             @endif
-                            <li><a href="{{ route('story-amma.index') }}"><i class="fa fa-book" aria-hidden="true"></i>
-                                    <span class="show-sidebar">Histoire AMMA</span></a></li>
-                            <li><a href="{{ route('blog-admin.index') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i>
-                                    <span class="show-sidebar">Blog</span></a></li>
-                            <li><a href="{{ route('users.index') }}"><i class="fa fa-user" aria-hidden="true"></i>
-                                    <span class="show-sidebar">Utilisateurs</span></a></li>
+
+                            @if($ammaStory)
+                            <li>
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                <span class="show-sidebar">
+                                    <a href="{{ route('amma-story.edit', ['id' => $ammaStory->id]) }}">Histoire Amma</a>
+                                </span>
+                            </li>
+                            @else
+                                <li>
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span class="show-sidebar">
+                                    <a href="{{ route('amma-story.create') }}">Histoire Amma</a>
+                                </span>
+                                </li>
+                            @endif
+                            <li>
+                                <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                                <span class="show-sidebar">
+                                    <a href="{{ route('blog.index') }}">Blog</a>
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="show-sidebar">
+                                    <a href="{{ route('users.index') }}">Utilisateurs</a>
+                                </span>
+                            </li>
                         </ul>
                     </div>
                     <div class="admin-main-content">
@@ -84,7 +125,11 @@
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="admin-pic-dropdown">
-                                        <img src="http://www.kippondream.com/uploads/membres/3/kuro.jpg" alt="">
+                                        @if(auth()->user()->avatar)
+                                            <img src="/{{ auth()->user()->avatar }}" alt="">
+                                        @else
+                                            <img src="{{ url('image/gravatar.png') }}" alt="">
+                                        @endif
                                     </div>
                                     {{ auth()->user()->username }}
                                 </button>
@@ -104,6 +149,6 @@
     </div>
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
-
-    @stack('scripts');
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    @stack('scripts')
 </body>

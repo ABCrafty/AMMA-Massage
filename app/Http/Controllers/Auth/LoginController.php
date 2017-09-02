@@ -39,7 +39,7 @@ class LoginController extends Controller
     }
 
     public function create() {
-        return view('ammaAuth.login');
+        return view('auth.login');
     }
 
     public function store() {

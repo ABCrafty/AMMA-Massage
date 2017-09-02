@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Permission;
-use App\Models\Role;
+use App\Permission;
+use App\Role;
 use App\User;
+use App\Homepage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
         //create a user
         $mainAdmin = User::create([
-            'username' => 'Alex',
+            'username' => 'Romain',
             'email' => 'someadress@example.com',
             'description' => '',
             'password' => 'password',
@@ -42,13 +43,7 @@ class DatabaseSeeder extends Seeder
             'display_name' => 'Admin',
             'description' => 'Only one and only admin',
         ]);
-
-        Role::create([
-            'name' => 'guest',
-            'display_name' => 'Invité',
-            'description' => 'Role basique sur le site',
-        ]);
-        $this->command->warn("Admin and guest role created successfully");
+        $this->command->warn("Admin role created successfully");
 
         //create a permission for role
         $manageUsers = Permission::create([
@@ -65,5 +60,28 @@ class DatabaseSeeder extends Seeder
         //here attaching role for user
         $mainAdmin->attachRole($admin);
         $this->command->warn("User correctly promoted to admin");
+
+        $homepage = Homepage::create([
+            'phone' => '0909090909',
+            'phone_text' => 'Mon numéro de tél',
+            'title' => 'Amma-Massage',
+            'content_title' => 'Découvrez le massage Amma',
+            'title_link' => 'Découvrir le message Amma',
+            'service_1' => 'Service 1',
+            'service_2' => 'Service 2',
+            'service_3' => 'Service 3',
+            'service_4' => 'Service 4',
+            'offer_preview' => 'Découvrir mes différentes offres selon vos besoins',
+            'offer_title_1' => 'Titre offre 1',
+            'offer_title_2' => 'Titre offre 2',
+            'offer_title_3' => 'Titre offre 3',
+            'offer_content_1' => 'COntenu de la 1ère offre, blabla blabla blabla blabla blabla blabla blabla blabla',
+            'offer_content_2' => 'COntenu de la 2ème offre, blabla blabla blabla blabla blabla blabla blabla blabla',
+            'offer_content_3' => 'COntenu de la 3ème offre, blabla blabla blabla blabla blabla blabla blabla blabla',
+            'offer_link_1' => 'Lien vers la 1ère offre',
+            'offer_link_2' => 'Lien vers la 2ème offre',
+            'offer_link_3' => 'Lien vers la 3ème offre'
+        ]);
+        $this->command->warn("Homepage content generated");
     }
 }
