@@ -265,10 +265,37 @@ p {
   text-align: justify;
 }
 
+.history-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-text {
+  order: 1;
+}
+
 .history-img {
+  padding: 1rem 0;
+  order: 2;
+
   img {
     width: 100%;
   }
+}
+
+.history-conclusion {
+  padding: 1rem 0;
+  color: #D32F2F;
+}
+
+.history-video {
+  iframe {
+    width: 100%;
+  }
+}
+
+.history-title {
+  padding: 1rem 0;
 }
 
 .story-line {
@@ -276,4 +303,16 @@ p {
   width: 90%;
   margin: 1rem auto;
   font-size: 10px;
+}
+
+.history-pdf {
+  text-align: center;
+}
+
+.history-know-more {
+  width: 100%;
+}
+
+.underline {
+  text-decoration: underline;
 }

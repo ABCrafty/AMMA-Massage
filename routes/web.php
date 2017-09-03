@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('blog', 'PostsController@index')->name('front-blog.index');
+Route::get('blog/{post}', 'PostsController@show')->name('front.blog.show');
 
 Route::get('histoire-amma', 'AmmastoryController@index')->name('front-amma-story.index');
 
@@ -44,6 +45,9 @@ Route::group(['prefix' => 'admin',  'middleware' => ['role:admin']], function()
     Route::get('blog/{blog}/delete', 'Admin\PostsController@destroy')->name('blog.destroy');
     Route::resource('blog', 'Admin\PostsController', ['except' => 'destroy']);
     Route::any('blog-data', 'Admin\PostsController@ajaxListing')->name('datatables.blogData');
+
+    // background
+    Route::resource('background', 'Admin\BackgroundController');
 
     Route::any('user-data', 'Admin\UsersController@ajaxListing')->name('datatables.data');
 });

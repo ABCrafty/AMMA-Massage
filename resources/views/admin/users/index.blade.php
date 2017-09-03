@@ -1,5 +1,9 @@
 @extends('admin.layouts.app')
 
+@section('title')
+    Gestion des utilisateurs - @parent
+@endsection
+
 @section('content')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Tableau de bord</a></li>

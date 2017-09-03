@@ -1,0 +1,144 @@
+.blog-index-container {
+  background-size: cover!important;
+}
+
+.blog-contain {
+  background: rgba(255,255,255,0.4);
+  min-height: 60vh;
+
+  h1 {
+    text-align: center;
+    width: 80%;
+    margin: auto!important;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+  }
+}
+
+
+.post, .other-post {
+  padding: 4rem 1rem 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s;
+  transition-delay: 0.2s;
+
+  .post-image, .other-post-image {
+    overflow: hidden;
+    img {
+      width: 100%;
+
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        transform: scale(1.3);
+
+      }
+    }
+  }
+
+  .post-menu, .other-post-menu {
+    background: $primary-color;
+    color: white;
+
+    .post-title, .other-post-title {
+      min-height: 95px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h3 {
+      padding: 1rem;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    a {
+      display: block;
+      color: white;
+      background: $secondary-color;
+      padding: 1rem;
+
+      &:hover {
+        color: $secondary-color;
+        background: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.post.in-view {
+  padding: 1rem;
+  opacity: 1;
+}
+
+// show
+
+.blog-content {
+  transition: all 0.3s;
+  h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    background: $secondary-color;
+
+    padding: 1rem 0;
+
+  }
+}
+
+.article {
+  padding: 0.5rem;
+  text-align: justify;
+  transition: all 0.3s;
+}
+
+.blog-other-content {
+  transition: all 0.3s;
+}
+
+.post-credits {
+  background: $primary-color;
+  color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+
+  p {
+    margin: 0;
+  }
+
+}
+
+.post-user {
+  display: flex;
+  text-align: center;
+  align-items: center;
+
+  .post-user-picture {
+    width: 20%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  p {
+    width: 70%;
+  }
+}
+
+.other-posts {
+  > h2 {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+}
+.other-post {
+  opacity: 1;
+  padding: 1rem;
+
+}

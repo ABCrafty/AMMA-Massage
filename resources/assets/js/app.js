@@ -33,43 +33,42 @@ $(document).ready(function () {
 
     setTimeout(animationOut, 5000);
 
-
     // resize the widths of the sidebar and the main content during and after the hover
     let hoverIn = function () {
 
         $('.show-sidebar').delay(100).fadeIn();
         $('.sidebar-admin').css('transition', 'all 0.3s ');
-        if($(window).width() <= 400) {
+        if ($(window).width() <= 400) {
             $('.sidebar-admin').width('70%');
             $('.admin-main-content').width('30%');
         }
 
-        if($(window).width() > 400 && $(window).width() <= 550 ) {
+        if ($(window).width() > 400 && $(window).width() <= 550) {
             $('.sidebar-admin').width('70%');
             $('.admin-main-content').width('30%');
         }
 
-        if($(window).width() > 550 && $(window).width() <= 768 ) {
+        if ($(window).width() > 550 && $(window).width() <= 768) {
             $('.sidebar-admin').width('40%');
             $('.admin-main-content').width('60%');
         }
 
-        if( $(window).width() > 768 && $(window).width() <= 999 ) {
+        if ($(window).width() > 768 && $(window).width() <= 999) {
             $('.sidebar-admin').width('35%');
             $('.admin-main-content').width('65%');
         }
 
-        if($(window).width() > 999 && $(window).width() <= 1200 ) {
+        if ($(window).width() > 999 && $(window).width() <= 1200) {
             $('.sidebar-admin').width('25%');
             $('.admin-main-content').width('75%');
         }
 
-        if($(window).width() > 1200 && $(window).width() <= 1599 ) {
+        if ($(window).width() > 1200 && $(window).width() <= 1599) {
             $('.sidebar-admin').width('20%');
             $('.admin-main-content').width('80%');
         }
 
-        if($(window).width() >= 1600) {
+        if ($(window).width() >= 1600) {
             $('.sidebar-admin').width('15%');
             $('.admin-main-content').width('85%');
         }
@@ -81,38 +80,38 @@ $(document).ready(function () {
 
         $('.show-sidebar').hide();
         $('.sidebar-admin').css('transition', 'all 0s ');
-        if($(window).width() <= 400) {
+        if ($(window).width() <= 400) {
             $('.sidebar-admin').width('22%');
             $('.admin-main-content').width('78%');
         }
 
-        if($(window).width() > 400 && $(window).width() <= 550) {
+        if ($(window).width() > 400 && $(window).width() <= 550) {
             $('.sidebar-admin').width('22%');
             $('.admin-main-content').width('78%');
         }
 
-        if($(window).width() > 550 && $(window).width() <= 768) {
+        if ($(window).width() > 550 && $(window).width() <= 768) {
             $('.sidebar-admin').width('12%');
             $('.admin-main-content').width('88%');
         }
 
-        if($(window).width() > 768 && $(window).width() <= 999) {
+        if ($(window).width() > 768 && $(window).width() <= 999) {
             $('.sidebar-admin').width('10%');
             $('.admin-main-content').width('90%');
         }
 
-        if($(window).width() > 999 && $(window).width() <= 1200 ) {
+        if ($(window).width() > 999 && $(window).width() <= 1200) {
             $('.sidebar-admin').width('7%');
             $('.admin-main-content').width('93%');
         }
 
-        if($(window).width() > 1200 && $(window).width() <= 1599 ) {
+        if ($(window).width() > 1200 && $(window).width() <= 1599) {
             $('.sidebar-admin').width('5%');
             $('.admin-main-content').width('95%');
         }
 
 
-        if($(window).width() >= 1600) {
+        if ($(window).width() >= 1600) {
             $('.sidebar-admin').width('4%');
             $('.admin-main-content').width('96%');
         }
@@ -127,12 +126,12 @@ $(document).ready(function () {
     // all scroll behaviours
     let scroll = {
         // checkView allows to add classes when the targeted element gets scrolled into the view
-        checkView : function () {
+        checkView: function () {
             let windowHeight = $window.height();
             let windowTopPosition = $window.scrollTop();
             let windowBottomPosition = (windowTopPosition + windowHeight);
 
-            $.each($animationElements, function() {
+            $.each($animationElements, function () {
                 let $element = $(this);
                 let elementHeight = $element.outerHeight();
                 let elementTopPosition = $element.offset().top;

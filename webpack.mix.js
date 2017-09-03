@@ -14,6 +14,7 @@ const { mix } = require('laravel-mix');
 mix.js([
     'resources/assets/js/app.js',
     'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/popper.js/dist/umd/popper.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
     'node_modules/datatables.net/js/jquery.dataTables.js',
     'node_modules/datatables.net-buttons/js/dataTables.buttons.js',

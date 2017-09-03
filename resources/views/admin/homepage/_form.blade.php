@@ -190,4 +190,15 @@
     </div>
 </div>
 
+<div class="form-group form-custom <?php if($errors->has('background')) { echo 'has-danger';} ?>">
+    <div class="col-3">
+        {!! Form::label('background', "Ond d'écran page d'accueil", ['class' => 'control-label']) !!}
+    </div>
+
+    <div class="col-12">
+        {!! Form::file('background', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('background', '<span class="help-block">Ce champ est obligatoire</span>') !!}
+    </div>
+</div>
+
 <button type="submit" class="btn green-button">Mettre à jour</button>

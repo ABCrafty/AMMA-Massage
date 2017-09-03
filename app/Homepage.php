@@ -27,7 +27,8 @@ class Homepage extends Model
         'offer_content_3',
         'offer_link_1',
         'offer_link_2',
-        'offer_link_3'
+        'offer_link_3',
+        'background'
     ];
 
     protected $hidden = [

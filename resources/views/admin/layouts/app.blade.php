@@ -118,6 +118,22 @@
                                     <a href="{{ route('users.index') }}">Utilisateurs</a>
                                 </span>
                             </li>
+
+                            @if($background)
+                                <li>
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span class="show-sidebar">
+                                    <a href="{{ route('background.edit', ['id' => $background->id]) }}">Fonds d'écran</a>
+                                </span>
+                                </li>
+                            @else
+                                <li>
+                                    <i class="fa fa-book" aria-hidden="true"></i>
+                                    <span class="show-sidebar">
+                                    <a href="{{ route('background.create') }}">Fonds d'écran</a>
+                                </span>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                     <div class="admin-main-content">

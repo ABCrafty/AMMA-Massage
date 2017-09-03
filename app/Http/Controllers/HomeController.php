@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Background;
 use App\Homepage;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $homepage = Homepage::first();
-        return view('homepage/index', compact('homepage'));
+        $background = Background::first();
+        return view('homepage/index', compact('homepage', 'background'));
     }
 }

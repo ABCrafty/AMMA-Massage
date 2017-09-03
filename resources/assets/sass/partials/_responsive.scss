@@ -4,6 +4,20 @@
     justify-content: center;
   }
 
+  // blog contents
+  .post, .other-post {
+    .post-image, .other-post-image {
+      width: 60%;
+      margin: auto;
+    }
+  }
+
+
+  .post-menu {
+    width: 60%;
+    margin: auto;
+  }
+
   // admin
   .sidebar-admin {
     width: 12%;
@@ -52,6 +66,71 @@
     font-size: 1.5rem;
   }
 
+  // histoire amma
+
+  .history-content {
+    display: block;
+  }
+
+  .history-img {
+    float: right;
+    width: 250px;
+    padding: 0 0 1rem 1rem;
+  }
+
+  // homepage, projects and blog content
+  .blog-contain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .post {
+    width: 44%;
+
+    .post-image {
+      width: 100%!important;
+    }
+
+    .post-menu {
+      width: 100%;
+    }
+  }
+
+// blog show
+
+.blog-show-container {
+  display: flex;
+}
+
+  .blog-content {
+    width: 70%;
+    font-size: 1.2rem;
+
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+
+  .blog-other-content {
+    width: 30%;
+  }
+
+  .other-post {
+    .other-post-image {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .article {
+    padding: 2rem;
+  }
+
   // admin
 
   .sidebar-admin {
@@ -83,6 +162,72 @@
     font-size: 1rem;
   }
 
+  // histoire amma
+
+  .history-video {
+    text-align: center;
+    iframe {
+      width: 60%;
+    }
+  }
+
+  // projects and blog content
+
+  .blog-contain {
+    justify-content: flex-start;
+  }
+
+  .post {
+    width: 25%;
+
+    h5 {
+      min-height: 75px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .presentation {
+    .profile-text {
+      .profile {
+        float: none;
+        margin: auto;
+      }
+
+      p {
+        width: 50%;
+        margin: auto;
+      }
+
+      .current-path {
+        p:nth-child(0) {
+          text-align: center;
+        }
+      }
+
+      button {
+        width: 50%;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  // blog show
+
+  .blog-content {
+    width: 80%;
+  }
+
+  .blog-other-content {
+    width: 20%;
+  }
+
+  .article {
+    padding: 2rem 8rem;
+  }
+
   // admin
 
   .sidebar-admin {
@@ -100,6 +245,7 @@
   .form-text {
     text-align: center;
   }
+
 }
 
 /*===========
@@ -121,6 +267,20 @@ MEDIUM SCREENS
 }
 
 @media screen and (min-width: 1600px) {
+
+  // blog
+
+
+  .blog-contain {
+    h1 {
+      width: 100%;
+    }
+  }
+
+  .post {
+    width: 20%;
+  }
+
   // admin
   .sidebar-admin {
     width: 4%;

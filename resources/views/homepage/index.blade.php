@@ -9,7 +9,7 @@
 
     <div class="container-fluid ">
         <div class="row homepage-landing align-items-end"
-             style=" background: url({{asset('image/massage.jpg')}}) fixed no-repeat;background-size:cover;">
+             style=" background: url({{ $background->homepage }}) fixed no-repeat;background-size:cover;">
             <div class="tel animated bounceInRight">
                 <p>{{$homepage->phone_text}}</p>
                 <p><a href="tel:+330622032225">{{$homepage->phone}}</a></p>

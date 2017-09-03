@@ -50,6 +50,18 @@ class HomeController extends Controller
             if($value == null || !isset($key))
                 $input[$key] ='';
 
+        $default_path = 'uploads/homepage/';
+
+        // use the custom upload function written in Controller.php
+        if($request->file('background')) {
+            $background = $this->upload(['file' => $request->file('background'), 'path' => $default_path]);
+        }
+
+
+        if($request->file('background')) {
+            $input['background'] = $background;
+        }
+
         $homepage->update($input);
 
         session()->flash('message','Page d\'accueil mise à jour');

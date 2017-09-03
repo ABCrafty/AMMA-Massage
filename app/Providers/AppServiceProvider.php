@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\AmmaStory;
+use App\Background;
 use App\Homepage;
 use App\User;
 use Illuminate\Support\ServiceProvider;
@@ -19,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('admin.layouts.app', function($view) {
             $view->with('homepage', Homepage::first());
             $view->with('ammaStory', AmmaStory::first());
+            $view->with('background', Background::first());
             $view->with('user', User::count());
         });
     }

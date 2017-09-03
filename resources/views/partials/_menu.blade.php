@@ -23,7 +23,7 @@
                 <a class="nav-link" href="#">Particuliers</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href=" {{ route('front-blog.index') }}">Blog</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -41,10 +41,18 @@
                 @if (!auth()->guest())
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="admin-pic-dropdown">
+                                @if(auth()->user()->avatar)
+                                    <img src="/{{ auth()->user()->avatar }}" alt="">
+                                @else
+                                    <img src="{{ url('images/gravatar.png') }}" alt="">
+                                @endif
+                            </div>
                             {{ auth()->user()->username }}
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('users.edit', auth()->user()->id) }}">Voir mon profil</a>
+                            <a class="dropdown-item" href="{{ route('home') }}">Retourner sur le site</a>
                             <a class="dropdown-item" href="{{ route('logout') }}">Me déconnecter</a>
                         </div>
                     </div>
