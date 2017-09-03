@@ -4,24 +4,32 @@
     <div class="container-fluid">
         <div class="row history-container">
             <div class="intro-history">
-                {!! $story->intro !!}
+                @if($story)
+                    {!! $story->intro !!}
+                @endif
             </div>
 
             <hr class="story-line">
 
             <div class="history-content">
                 <div class="history-img">
-                    <img src="{!! $story->image !!}" alt="">
+                    @if($story)
+                        <img src="{!! $story->image !!}" alt="">
+                    @endif
                 </div>
                 <div class="history-text">
-                    {!! $story->content !!}
+                    @if($story)
+                        {!! $story->content !!}
+                    @endif
                 </div>
 
 
             </div>
 
             <div class="history-conclusion">
-                {!! $story->conclusion !!}
+                @if($story)
+                    {!! $story->conclusion !!}
+                @endif
             </div>
 
             <div class="history-know-more">
@@ -34,7 +42,9 @@
 
 
                 <div class="history-video">
-                    {!! $story->video_link !!}
+                    @if($story)
+                        {!! $story->video_link !!}
+                    @endif
                 </div>
 
                 <div class="text-center history-title">
@@ -42,7 +52,9 @@
                 </div>
 
                 <div class="history-pdf">
-                    <a href="{{ $story->pdf }}" target="_blank"><img src="{{ asset('image/pdf.png') }}" alt="pdf"></a>
+                    @if($story)
+                        <a href="{{ $story->pdf }}" target="_blank"><img src="{{ asset('image/pdf.png') }}" alt="pdf"></a>
+                    @endif
                 </div>
 
             </div>

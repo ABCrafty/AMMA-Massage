@@ -9,7 +9,7 @@
     <div class="blog-index-container" style="background: url(@if($background) {{ $background->blog }} @endif() ) no-repeat center center">
         <div class="blog-contain">
 
-            <h1 title="Retrouvez toutes mes actualités">Retrouvez toutes mes actualités</h1>
+            <h1 title="Retrouvez toutes mes actualités">Retrouvez mon actualité</h1>
             @foreach($posts as $post)
                 <div class="post custom-animated">
                     <div class="post-image">

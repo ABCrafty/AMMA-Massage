@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    @parent - Accueil
+    Accueil - @parent
 @endsection
 
 @section('content')
