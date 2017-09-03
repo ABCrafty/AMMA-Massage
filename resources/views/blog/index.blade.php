@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="blog-index-container" style="background: url( {{ $background->blog }}) no-repeat center center">
+    <div class="blog-index-container" style="background: url(@if($background) {{ $background->blog }} @endif() ) no-repeat center center">
         <div class="blog-contain">
 
             <h1 title="Retrouvez toutes mes actualités">Retrouvez toutes mes actualités</h1>
