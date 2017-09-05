@@ -16,7 +16,7 @@
             </div>
 
             <div class="massage-amma">
-                    <h1>{{ $homepage->title }}</h1>
+                    <h1>{!! $homepage->title !!}</h1>
                     <p>{{ $homepage->content_title }}</p>
                     <a href=" {{ route('front-amma-story.index' }}" class="green-button">{{ $homepage->title_link }}</a>
             </div>
