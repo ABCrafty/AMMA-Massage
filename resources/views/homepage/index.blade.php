@@ -18,7 +18,7 @@
             <div class="massage-amma">
                     <h1>{{ $homepage->title }}</h1>
                     <p>{{ $homepage->content_title }}</p>
-                    <a href="#" class="green-button">{{ $homepage->title_link }}</a>
+                    <a href=" {{ route('front-amma-story.index' }}" class="green-button">{{ $homepage->title_link }}</a>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
             <div class="col-lg-4">
                 <div class="service animated">
                     <i class="fa fa-linode" aria-hidden="true"></i>
-                    <h6>{{ $homepage->offer_title_2 }}</h6>
+                    <h6>{{ $homepage->offer_title_1 }}</h6>
                     <p>{{ $homepage->offer_content_1 }}</p>
                     <a href="#" class="green-button square">{{ $homepage->offer_link_1 }}</a>
                 </div>
