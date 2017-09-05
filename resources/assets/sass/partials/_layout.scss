@@ -10,8 +10,12 @@ p {
   margin: 0!important;
 }
 
+header {
+  background: #f9fbe7;
+}
+
 .homepage-landing {
-  height: 65vh;
+  height: 70vh;
 }
 
 .massage-amma {
@@ -286,6 +290,7 @@ p {
 .history-conclusion {
   padding: 1rem 0;
   color: #D32F2F;
+  text-align: center;
 }
 
 .history-video {
