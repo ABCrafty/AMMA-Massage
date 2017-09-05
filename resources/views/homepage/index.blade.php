@@ -12,7 +12,7 @@
              style=" background: url( @if($background) {{ $background->homepage }} @endif()) fixed no-repeat;background-size:cover;">
             <div class="tel animated bounceInRight">
                 <p>{{$homepage->phone_text}}</p>
-                <p><a href="tel:+330622032225">{{$homepage->phone}}</a></p>
+                <p><a href="tel:+33{{ $homepage->phone}}">0{{$homepage->phone}}</a></p>
             </div>
 
             <div class="massage-amma">
